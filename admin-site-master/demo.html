@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Chat Room</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .chat-container,
+        .login-box {
+            background: white;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-box {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .login-box input {
+            padding: 10px;
+            width: 80%;
+            margin-bottom: 10px;
+        }
+
+        .chat-header {
+            background: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .chat-box {
+            height: 300px;
+            overflow-y: scroll;
+            padding: 10px;
+        }
+
+        .chat-input-area {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+
+        .chat-input-area input {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .chat-input-area button {
+            padding: 10px;
+            background: #333;
+            color: white;
+            border: none;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-box" id="login-box">
+        <input type="text" id="username" placeholder="Enter your name" />
+        <button onclick="joinChat()">Join Chat</button>
+    </div>
+
+    <div class="chat-container hidden" id="chat-container">
+        <div class="chat-header">👥 Team Chat</div>
+        <div class="chat-box" id="chat-box"></div>
+        <div class="chat-input-area">
+            <input type="text" id="message-input" placeholder="Type a message..." />
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js">let socket;
+      
+    </script>
+</body>
+
+</html>
